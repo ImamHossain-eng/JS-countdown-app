@@ -1,3 +1,8 @@
+const daysEl = document.getElementById('days')
+const hoursEl = document.getElementById('hours')
+const minutesEl = document.getElementById('minutes')
+const secondsEl = document.getElementById('seconds')
+
 const newYear = '1 Jan 2021'
 
 function countdown(){
@@ -11,11 +16,18 @@ function countdown(){
     const days = Math.floor(totalSeconds / 3600 / 24)
     //hours remaining after considering day
     const hours = Math.floor(totalSeconds / 3600) % 24
+    //minutes remaining 
     const minutes = Math.floor(totalSeconds / 60) % 60
+    //secondss remaining 
     const seconds = Math.floor(totalSeconds) % 60
 
-    console.log(days, hours, minutes, seconds)
-    
+   // console.log(days, hours, minutes, seconds)
+    //Display results to DOM
+    daysEl.innerHTML = days
+    hoursEl.innerHTML = hours
+    minutesEl.innerHTML = minutes
+    secondsEl.innerHTML = seconds
+
 }
 
 countdown()
